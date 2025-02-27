@@ -1,0 +1,302 @@
+/* Default styling */
+.jr-body {
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 18px;
+  font-family: 'Roboto', 'Noto Sans', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  text-align: left;
+  word-wrap: break-word;
+  padding-top: 20px;
+}
+
+/* Cải tiến về căn lề */
+.simple-container {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 15px 30px;
+}
+
+.simple-article-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  text-rendering: optimizeLegibility;
+}
+
+/* Dành cho in ấn / xuất PDF */
+@media print {
+  .simple-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .simple-control, 
+  .simple-edit-theme, 
+  .simple-ext-info, 
+  .simple-ui-container,
+  .simple-add-comment-container {
+    display: none !important;
+  }
+  
+  .simple-article-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .jr-body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  /* Đảm bảo mọi thứ đều có màu đen để in tốt hơn */
+  p, h1, h2, h3, h4, h5, h6, li, span, div {
+    color: #000000 !important;
+  }
+}
+
+/* Giao diện chính */
+h1.simple-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 18px 0;
+  color: #333333;
+  text-align: left;
+}
+
+.simple-author {
+  color: #777777;
+  font-size: 16px;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.simple-date {
+  color: #777777;
+  font-size: 16px;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.simple-url {
+  margin-bottom: 15px;
+  word-break: break-all;
+  font-size: 14px;
+}
+
+/* Nội dung */
+.content-container {
+  padding-top: 20px;
+  clear: both;
+}
+
+.content-container p {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.content-container h1, 
+.content-container h2, 
+.content-container h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Cải tiến thêm cho links */
+a:link, a:visited {
+  color: #1a73e8;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+a:hover {
+  border-bottom: 1px solid #1a73e8;
+}
+
+/* Hỗ trợ hình ảnh */
+.content-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Hỗ trợ code */
+.content-container pre, 
+.content-container code {
+  background-color: #f5f5f5;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.content-container pre {
+  padding: 10px;
+  overflow: auto;
+  white-space: pre;
+  margin-bottom: 20px;
+}
+
+.content-container code {
+  padding: 2px 4px;
+  font-size: 0.9em;
+}
+
+/* Hỗ trợ tables */
+.content-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.content-container th, 
+.content-container td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.content-container th {
+  background-color: #f5f5f5;
+}
+
+/* Hỗ trợ quotes */
+.content-container blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+  border-left: 4px solid #1a73e8;
+  background-color: #f7f7f7;
+  font-style: italic;
+}
+
+/* Thanh điều khiển */
+.simple-ui-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-control {
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.simple-control:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Cải tiến cho phím tắt */
+.simple-key-hint {
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  margin: 0 3px;
+}
+
+/* Phần PDF Export */
+.pdf-export-options {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 100001;
+  right: 50px;
+  top: 0;
+}
+
+.pdf-export-options.active {
+  display: block;
+}
+
+.pdf-export-options label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pdf-export-options select,
+.pdf-export-options input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+.pdf-export-options button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pdf-export-options button:hover {
+  background-color: #0d66d0;
+}
+
+/* Tùy chỉnh thêm cho phần tìm kiếm */
+.simple-find-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 100000;
+  align-items: center;
+}
+
+.simple-find-container.active {
+  display: flex;
+}
+
+.simple-find-container input {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 200px;
+}
+
+/* Phần hiển thị thời gian đọc */
+.simple-time-estimate {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
